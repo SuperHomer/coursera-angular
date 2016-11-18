@@ -6,8 +6,6 @@ angular.module('LunchCheck', [])
 
 LunchCheckController.$inject = ['$scope'];
 
-var ps = element.all(by.css('p'));
-
 function LunchCheckController ($scope) {
   $scope.lunch = "";
   $scope.message = "";
