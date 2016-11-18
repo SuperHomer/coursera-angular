@@ -5,6 +5,9 @@ angular.module('LunchCheck', [])
 .controller('LunchCheckController', LunchCheckController);
 
 LunchCheckController.$inject = ['$scope'];
+
+var ps = element.all(by.css('p'));
+
 function LunchCheckController ($scope) {
   $scope.lunch = "";
   $scope.message = "";
@@ -21,12 +24,15 @@ function LunchCheckController ($scope) {
     console.log(lunchLength);
 
     if ($scope.lunch === "") {
+      $scope.myColor = "red";
       message = "Please enter data first";
     }
     else if (lunchLength <= 3) {
+      $scope.myColor = "green";
       message = "Enjoy!";
     }
     else if (lunchLength > 3) {
+      $scope.myColor = "green";
       message = "Too much!";
     }
     return message;
